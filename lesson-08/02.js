@@ -12,3 +12,17 @@ function isNumeric(str) {
 // console.log(isNumeric("123abc")) // Ожидаемый результат: false
 // console.log(isNumeric("abc")) // Ожидаемый результат: false
 // console.log(isNumeric(" ")) // Ожидаемый результат: false
+
+function isNumeric(str) {
+    if (typeof str !== "string" || str.trim() === "") {
+        return false;
+    }
+
+    return !isNaN(str) && isFinite(str);
+}
+
+console.log(isNumeric("123"));
+console.log(isNumeric("12.3"));
+console.log(isNumeric("123abc"));
+console.log(isNumeric("abc"));
+console.log(isNumeric(" "));
